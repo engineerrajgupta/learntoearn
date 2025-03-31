@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "learnit_tandem";
+$dbname = "learntoearn";
 $username = "root"; // Change if needed
 $password = "";
 

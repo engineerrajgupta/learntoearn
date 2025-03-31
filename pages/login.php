@@ -1,4 +1,5 @@
 <?php
+ session_start();
 require "../includes/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,7 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
-        header("Location: index.php");  // Redirect to dashboard
+       
+// Assuming $username is retrieved during login validation
+$_SESSION['username'] = $username;
+        header("Location: dashboard.php");  // Redirect to dashboard
     } else {
         echo "Invalid email or password!";
     }
