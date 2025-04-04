@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
+
+
+
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
     <div class="flex flex-col h-screen">
@@ -15,7 +18,7 @@
         <header class="bg-white dark:bg-gray-800 shadow-md">
             <div class="container mx-auto px-4 py-3 flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="assets/images/logo.svg" alt="LearnIt Tandem Logo" class="h-10 w-auto mr-3">
+                <img src="/learntoearn/assets/images/learntoearn.png" alt="LearnToEarnLogo" class="h-20 w-20 mr-3">  <!-- Make sure this path is correct -->
                     <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">LearnToEarn</h1>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
@@ -34,35 +37,17 @@
                         </button>
                         <div class="relative">
                             <button id="user-menu" class="flex items-center space-x-2 focus:outline-none">
-                                <img src="assets/images/user-avatar.jpg" alt="User Avatar" class="w-8 h-8 rounded-full">
-                                <span class="text-gray-700 dark:text-gray-300 hidden md:block">Neeraj</span>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
+                              
+                                <a href=/learntoearn/pages/login.php>  <span class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Login</span> </a>
+
                             </button>
-                            <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 hidden z-10">
-                                <a href="profile.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
-                                <a href="settings.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a>
-                                <a href="/learntoearn/pages/logout.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                    <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
-                </button>
+              
             </div>
-            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-inner">
-                <nav class="container mx-auto px-4 py-3">
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><a href="index.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li>
-                        <li><a href="subjects.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Subjects</a></li>
-                        <li><a href="messages.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
-                        <li><a href="ai-tools.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a></li>
-                        <li><a href="profile.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Profile</a></li>
-                        <li><a href="settings.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Settings</a></li>
-                        <li><a href="/learntoearn/pages/login.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Logout</a></li>
-                    </ul>
-                </nav>
-            </div>
+            
         </header>
 
         <!-- Main Content -->
@@ -214,49 +199,13 @@
                             </div>
                         </section>
 
-                        <!-- Recent Activity -->
-                        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Recent Activity</h2>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-2 rounded-full">
-                                        <i class="fas fa-user-edit text-blue-600 dark:text-blue-400"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <p class="text-gray-700 dark:text-gray-300">You updated the syllabus for <strong>Advanced Physics</strong></p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">Today at 8:30 AM</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="flex-shrink-0 bg-green-100 dark:bg-green-900 p-2 rounded-full">
-                                        <i class="fas fa-comment-dots text-green-600 dark:text-green-400"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <p class="text-gray-700 dark:text-gray-300"><strong>Emma Wilson</strong> sent you a message</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">Yesterday at 3:45 PM</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="flex-shrink-0 bg-purple-100 dark:bg-purple-900 p-2 rounded-full">
-                                        <i class="fas fa-file-alt text-purple-600 dark:text-purple-400"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <p class="text-gray-700 dark:text-gray-300">You generated 15 new MCQs for <strong>Organic Chemistry</strong></p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">March 17, 2025 at 11:20 AM</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="flex-shrink-0 bg-orange-100 dark:bg-orange-900 p-2 rounded-full">
-                                        <i class="fas fa-calendar-check text-orange-600 dark:text-orange-400"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <p class="text-gray-700 dark:text-gray-300">You completed teaching <strong>Linear Algebra</strong> topic</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">March 16, 2025 at 2:15 PM</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="activity.php" class="block mt-4 text-indigo-600 dark:text-indigo-400 hover:underline">View all activity →</a>
+                        <!-- Recent Activity (Placeholder Content) -->
+                        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                           <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">More Page Content</h2>
+                           <p class="text-gray-600 dark:text-gray-300">This section represents other content you might have on your dashboard page.</p>
+                           <!-- Add more dashboard widgets or content here -->
                         </section>
+
                     </div>
                 </div>
             </div>
@@ -267,7 +216,7 @@
             <div class="container mx-auto px-4 py-4">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-center md:text-left mb-4 md:mb-0">
-                        <p class="text-sm text-gray-600 dark:text-gray-300">&copy; 2025 LearnToearn. All rights reserved.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">© 2025 LearnToearn. All rights reserved.</p>
                     </div>
                     <div class="flex space-x-4">
                         <a href="about.php" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
@@ -280,35 +229,43 @@
         </footer>
     </div>
 
+   
+
     <!-- Scripts -->
     <script>
+        // --- LearnToEarn Existing Scripts ---
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-    
+
         // User dropdown toggle
         const userMenu = document.getElementById('user-menu');
         const userDropdown = document.getElementById('user-dropdown');
-        
-        userMenu.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent click event from bubbling up
-            userDropdown.classList.toggle('hidden');
-        });
-    
+
+        // Check if userMenu exists before adding listener (robustness)
+        if (userMenu) {
+            userMenu.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click event from bubbling up
+                if(userDropdown) userDropdown.classList.toggle('hidden');
+            });
+        }
+
         // Close dropdown when clicking outside
         document.addEventListener('click', (event) => {
-            if (!userMenu.contains(event.target) && !userDropdown.contains(event.target)) {
-                userDropdown.classList.add('hidden');
+            if (userDropdown && !userDropdown.classList.contains('hidden')) {
+                if (userMenu && !userMenu.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                }
             }
         });
-    
+
         // Theme toggle logic
         const themeToggle = document.getElementById('theme-toggle');
-    
+
         function applyTheme(theme) {
             if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
@@ -317,68 +274,110 @@
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
             }
+            updateThemeIcon(); // Update icon whenever theme changes
+             // Also update chart colors if needed when theme changes
+             // updateChartTheme(theme); // Example function call
         }
-    
+
         // Load theme on page load
         const storedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         applyTheme(storedTheme);
-    
+
         // Toggle theme when button is clicked
-        themeToggle.addEventListener('click', () => {
-            const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-            applyTheme(newTheme);
-        });
-    
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+        }
+
         // Ensure correct icon is shown
         function updateThemeIcon() {
             const isDark = document.documentElement.classList.contains('dark');
-            document.querySelector(".fa-moon").classList.toggle("hidden", isDark);
-            document.querySelector(".fa-sun").classList.toggle("hidden", !isDark);
+            const moonIcon = document.querySelector("#theme-toggle .fa-moon");
+            const sunIcon = document.querySelector("#theme-toggle .fa-sun");
+            if (moonIcon) moonIcon.classList.toggle("hidden", isDark);
+            if (sunIcon) sunIcon.classList.toggle("hidden", !isDark);
         }
-    
-        updateThemeIcon(); // Run on load
-    
-        themeToggle.addEventListener('click', updateThemeIcon);
-    
+
         // Initialize progress chart
-        const progressChart = document.getElementById('progressChart');
-        if (progressChart) {
-            new Chart(progressChart, {
-                type: 'bar',
-                data: {
-                    labels: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Literature'],
-                    datasets: [{
-                        label: 'Completion Rate (%)',
-                        data: [85, 72, 78, 65, 90],
-                        backgroundColor: [
-                            'rgba(79, 70, 229, 0.6)',
-                            'rgba(16, 185, 129, 0.6)',
-                            'rgba(245, 158, 11, 0.6)',
-                            'rgba(239, 68, 68, 0.6)',
-                            'rgba(139, 92, 246, 0.6)'
-                        ],
-                        borderColor: [
-                            'rgb(79, 70, 229)',
-                            'rgb(16, 185, 129)',
-                            'rgb(245, 158, 11)',
-                            'rgb(239, 68, 68)',
-                            'rgb(139, 92, 246)'
-                        ],
-                        borderWidth: 1
-                    }]
+        const progressChartCanvas = document.getElementById('progressChart');
+        let progressChartInstance = null; // Keep track of the chart instance
+
+        function createOrUpdateChart() {
+             if (!progressChartCanvas) return; // Don't run if canvas not found
+
+             const isDark = document.documentElement.classList.contains('dark');
+             const gridColor = isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
+             const labelColor = isDark ? '#d1d5db' : '#374151'; // Tailwind gray-300 / gray-700
+
+             const chartData = {
+                labels: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Literature'],
+                datasets: [{
+                    label: 'Completion Rate (%)',
+                    data: [85, 72, 78, 65, 90],
+                    backgroundColor: [
+                        'rgba(79, 70, 229, 0.7)', // indigo-600
+                        'rgba(16, 185, 129, 0.7)', // green-500
+                        'rgba(245, 158, 11, 0.7)', // yellow-500
+                        'rgba(239, 68, 68, 0.7)',  // red-500
+                        'rgba(139, 92, 246, 0.7)'  // violet-500
+                    ],
+                    borderColor: [ // Optional: Add borders if desired
+                        'rgb(79, 70, 229)',
+                        'rgb(16, 185, 129)',
+                        'rgb(245, 158, 11)',
+                        'rgb(239, 68, 68)',
+                        'rgb(139, 92, 246)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+             const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false, // Allow chart to fill container height better
+                plugins: {
+                    legend: {
+                         labels: { color: labelColor }
+                    }
                 },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100
-                        }
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: { color: gridColor },
+                        ticks: { color: labelColor }
+                    },
+                    x: {
+                         grid: { color: gridColor },
+                         ticks: { color: labelColor }
                     }
                 }
-            });
+            };
+
+            if (progressChartInstance) {
+                // If chart exists, update its data and options
+                progressChartInstance.data = chartData;
+                progressChartInstance.options = chartOptions;
+                progressChartInstance.update();
+            } else {
+                // Otherwise, create a new chart
+                progressChartInstance = new Chart(progressChartCanvas, {
+                    type: 'bar',
+                    data: chartData,
+                    options: chartOptions
+                });
+            }
         }
+
+         createOrUpdateChart(); // Initial chart creation
+
+         // Optional: Update chart on theme change (add this inside applyTheme or listen separately)
+         // e.g., inside applyTheme: createOrUpdateChart();
+
+
     </script>
-    
+
 </body>
 </html>
