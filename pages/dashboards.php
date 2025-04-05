@@ -36,7 +36,7 @@
         /* Chatbot styles */
         #chat-trigger {
             position: fixed;
-            bottom: 57px;
+            bottom:57px;
             right: 20px;
             background-color: #3b82f6; /* Tailwind indigo-500 */
             color: white;
@@ -372,14 +372,7 @@
 
                         <!-- Quick Actions -->
                         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-file-alt text-blue-500 text-xl mr-3"></i>
-                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Create New Syllabus</h3>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">Start planning your new course or update existing ones.</p>
-                                <a href="syllabus-create.php" class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Create Now</a>
-                            </div>
+                           
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                                 <div class="flex items-center mb-4">
                                     <i class="fas fa-lightbulb text-yellow-500 text-xl mr-3"></i>
@@ -391,7 +384,7 @@
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                                 <div class="flex items-center mb-4">
                                     <i class="fas fa-comments text-green-500 text-xl mr-3"></i>
-                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Message Students</h3>
+                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Message Teacher</h3>
                                 </div>
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">Communicate with your students through the messaging system.</p>
                                 <a href="messages.php" class="block w-full px-4 py-2 text-center bg-green-500 hover:bg-green-600 text-white rounded-md">Open Messages</a>
