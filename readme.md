@@ -37,3 +37,26 @@ Coming soon... (you can add UI screenshots here)
    ```bash
    git clone https://github.com/engineerrajgupta/learntoearn.git
    cd learntoearn
+
+
+Start local server using XAMPP/WAMP and place the project in htdocs.
+
+Import the database:
+
+Import learntoearn.sql into your MySQL server (via phpMyAdmin or terminal).
+
+Update your environment:
+
+If required, add your Gemini API key inside a config or .env file.
+
+🤝 Contributing
+Pull requests are welcome! If you'd like to improve features or fix bugs, feel free to fork and create a PR.
+
+📬 Contact
+Made with ❤️ by @engineerrajgupta
+Drop your feedback or suggestions anytime!
+
+
+
+
+
