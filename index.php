@@ -109,10 +109,7 @@
                     <div class="flex-grow">
                         <!-- Welcome Section -->
                         <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Welcome, John!</h2>
-                                <span class="text-sm text-gray-500 dark:text-gray-400">Last login: March 18, 2025 - 9:42 AM</span>
-                            </div>
+                           
                             <p class="text-gray-600 dark:text-gray-300 mb-4">Ready to make learning more effective today? Here's what's happening in your teaching world.</p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
@@ -179,7 +176,7 @@
                                     <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Create New Syllabus</h3>
                                 </div>
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">Start planning your new course or update existing ones.</p>
-                                <a href="syllabus-create.php" class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Create Now</a>
+                                <a href="/learntoearn/pages/login.php" class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Create Now</a>
                             </div>
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                                 <div class="flex items-center mb-4">
@@ -187,7 +184,7 @@
                                     <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Generate MCQs</h3>
                                 </div>
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">Create AI-assisted multiple choice questions for your topics.</p>
-                                <a href="mcq-generator.php" class="block w-full px-4 py-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white rounded-md">Generate MCQs</a>
+                                <a href="/learntoearn/pages/login.php" class="block w-full px-4 py-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white rounded-md">Generate MCQs</a>
                             </div>
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                                 <div class="flex items-center mb-4">
@@ -195,7 +192,7 @@
                                     <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Message Students</h3>
                                 </div>
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">Communicate with your students through the messaging system.</p>
-                                <a href="messages.php" class="block w-full px-4 py-2 text-center bg-green-500 hover:bg-green-600 text-white rounded-md">Open Messages</a>
+                                <a href="/learntoearn/pages/login.php" class="block w-full px-4 py-2 text-center bg-green-500 hover:bg-green-600 text-white rounded-md">Open Messages</a>
                             </div>
                         </section>
 
