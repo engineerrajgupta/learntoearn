@@ -85,8 +85,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - LearnToEarn</title>
     <!-- Link Tailwind CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <!-- Optional: Link Font Awesome for icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script><!-- Optional: Link Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Optional: Add custom styles or overrides here */

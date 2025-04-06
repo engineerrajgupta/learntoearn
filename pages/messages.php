@@ -1,51 +1,61 @@
 <?php
 session_start();
-include '../includes/db.php';
+require_once '../includes/db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
+    $message = htmlspecialchars(trim($_POST['message']));
+    $user_id = $_SESSION['user_id'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $receiver_id = $_POST['receiver_id'];
-    $content = $_POST['message'];
-
-    $query = "INSERT INTO messages (sender_id, receiver_id, content, timestamp) VALUES ('$user_id', '$receiver_id', '$content', NOW())";
-    $conn->query($query);
+    $stmt = $pdo->prepare("INSERT INTO messages (user_id, message) VALUES (:user_id, :message)");
+    $stmt->execute(['user_id' => $user_id, 'message' => $message]);
 }
 
-$messages_query = "SELECT * FROM messages WHERE sender_id='$user_id' OR receiver_id='$user_id' ORDER BY timestamp DESC";
-$messages_result = $conn->query($messages_query);
+$sql = "SELECT messages.*, users.name 
+        FROM messages 
+        JOIN users ON messages.user_id = users.id 
+        ORDER BY messages.created_at DESC";
+$stmt = $pdo->query($sql);
+$messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Messages</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
+        .message { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .message strong { color: #333; }
+        .message em { font-size: 0.8em; color: #888; }
+        form textarea { width: 100%; height: 60px; }
+        form input[type="submit"] { margin-top: 10px; padding: 8px 16px; }
+    </style>
 </head>
-<body class="bg-gray-100 p-6">
-    <h1 class="text-3xl font-bold mb-4">Messages</h1>
+<body>
 
-    <form method="POST" class="bg-white p-6 rounded shadow-md">
-        <select name="receiver_id" class="p-2 border rounded w-full mb-3">
-            <option value="1">Admin</option>
-            <option value="2">Teacher</option>
-        </select>
-        <textarea name="message" placeholder="Type a message..." class="p-2 border rounded w-full mb-3"></textarea>
-        <button type="submit" class="bg-green-500 text-white p-2 rounded w-full">Send</button>
-    </form>
+<h2>Public Messages</h2>
 
-    <div class="bg-white p-6 rounded shadow-md mt-6">
-        <h2 class="text-xl font-semibold">Chat History</h2>
-        <ul>
-            <?php while ($row = $messages_result->fetch_assoc()): ?>
-                <li class="border-b p-2"><?php echo $row['content']; ?> <span class="text-sm text-gray-500">(<?php echo $row['timestamp']; ?>)</span></li>
-            <?php endwhile; ?>
-        </ul>
+<form method="POST">
+    <textarea name="message" placeholder="Type your message here..." required></textarea>
+    <input type="submit" value="Send">
+</form>
+
+<hr>
+
+<?php foreach ($messages as $row): ?>
+    <div class="message">
+        <strong><?php echo htmlspecialchars($row['name']); ?>:</strong><br>
+        <?php echo nl2br(htmlspecialchars($row['message'])); ?><br>
+        <em><?php echo $row['created_at']; ?></em>
     </div>
+<?php endforeach; ?>
+
+<p><a href="dashboard.php">Back to Dashboard</a></p>
+
 </body>
 </html>

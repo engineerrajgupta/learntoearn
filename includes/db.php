@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $dbname = "learntoearn";
-$username = "root"; // Change if needed
+$username = "root"; // Default for XAMPP
 $password = "";
 
 try {

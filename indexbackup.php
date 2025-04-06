@@ -9,7 +9,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>LearnToEarn</title>
     <!-- Tailwind CSS (CDN) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
     <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Dark mode logic (Optional) -->

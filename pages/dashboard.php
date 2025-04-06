@@ -1,7 +1,7 @@
 <?php
  // --- Authentication and Session Management ---
  session_start(); // Must be the very first thing
-
+ require_once '../includes/db.php';
  // Check if the user is logged in, otherwise redirect to login page
  if (!isset($_SESSION['user_id'])) {
      header("Location: login.php");
