@@ -13,7 +13,7 @@ if (empty($geminiApiKey)) {
     // You might want to log a warning if the fallback is used
     // error_log("Warning: Using hardcoded fallback Gemini API Key for testing.");
 }
-
+//api workingggg
 // **Critical Check: Ensure API Key is set**
 if (empty($geminiApiKey)) {
     // Log the error server-side
