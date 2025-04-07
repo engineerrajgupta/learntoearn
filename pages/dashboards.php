@@ -2,6 +2,13 @@
  // --- Authentication and Session Management ---
  session_start(); // Must be the very first thing
  require_once '../includes/db.php';
+
+if ($_SESSION['role'] !== 'student') {
+    header("Location: dashboard.php");
+    exit();
+}
+
+
  // Check if the user is logged in, otherwise redirect to login page
  if (!isset($_SESSION['user_id'])) {
      header("Location: login.php");
@@ -48,21 +55,27 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         #chat-popup-container {
-            display: none; /* Initially hidden */
+            display: none;
             position: fixed;
-            bottom: 80px; /* Position above the trigger */
+            bottom: 80px;
             right: 20px;
-            border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+            width: 50%;
+            min-width: 280px;
+            min-height: 200px;
+            max-width: 80vw;    /* 🔥 Allow full screen width */
+            max-height: 85vh;
+            
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 1000; /* Ensure it's on top */
-            width: 90%; /* Responsive width */
-            max-width: 350px; /* Max width for the popup */
-            background-color: #ffffff; /* Tailwind white */
-            /* Dark mode styles for chatbot */
-            /* Apply dark mode styles directly if needed, or use JS to toggle classes */
-        }
+            z-index: 1000;
+            
+            resize: both;
+            overflow: auto;
+          
+}
+
         .dark #chat-popup-container {
              background-color: #1f2937; /* Tailwind gray-800 */
              border: 1px solid #4b5563; /* Tailwind gray-600 */
@@ -422,26 +435,28 @@
         </footer>
     </div>
 
-    <!-- CHATBOT HTML START -->
-    <button id="chat-trigger">
-       <i class="fas fa-comment-dots mr-2"></i> Chat with AI
-    </button>
+  <!-- CHATBOT HTML START -->
+<button id="chat-trigger" class="fixed bottom-4 right-4 z-50 bg-indigo-600 text-white px-4 py-2 rounded shadow-md hover:bg-indigo-700">
+    <i class="fas fa-comment-dots mr-2"></i> Chat with AI
+</button>
 
-    <div id="chat-popup-container">
-        <div class="chat-header">
-            LearnToEarn AI Helper
-        </div>
-        <div id="chat-body" class="chat-body">
-            <!-- Messages will be added here by JS -->
-        </div>
-        <div class="chat-input-container">
-            <input type="text" id="message-input" class="chat-input" placeholder="Ask a question...">
-            <button id="send-button" class="send-button">
-                <i class="fas fa-paper-plane"></i> <!-- Optional: Send Icon -->
-            </button>
-        </div>
+<div id="chat-popup-container" style="display: none; left: auto;"
+     class="fixed bottom-20 right-4 z-50 w-80 max-h-[80vh] bg-white dark:bg-gray-800 border dark:border-gray-700 rounded shadow-lg flex flex-col ">
+    <div class="chat-header px-4 py-2 font-bold bg-indigo-600 text-white dark:bg-indigo-500">
+        LearnToEarn AI Helper
     </div>
-    <!-- CHATBOT HTML END -->
+    <div id="chat-body" class="chat-body flex-1 overflow-y-auto p-3 text-sm space-y-2 bg-gray-100 dark:bg-gray-900 dark:text-white">
+        <!-- Chat messages will go here -->
+    </div>
+    <div class="chat-input-container flex items-center gap-2 p-2 bg-gray-200 dark:bg-gray-700">
+        <input type="text" id="message-input" class="flex-1 px-2 py-1 rounded focus:outline-none dark:bg-gray-800 dark:text-white"
+               placeholder="Ask a question..." />
+        <button id="send-button" class="text-indigo-600 dark:text-indigo-400">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+<!-- CHATBOT HTML END -->
 
 
     <!-- Scripts -->
