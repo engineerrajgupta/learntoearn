@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Flipbook with Selectable Text</title>
+
+  <!-- PDF.js Viewer styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf_viewer.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 80vw;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .flipbook {
+      width: 1190px; /* 595 * 2 */
+      height: 842px;
+      margin: auto;
+    }
+
+    .page {
+      position: relative;
+      width: 595px;
+      height: 842px;
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
+    canvas {
+      width: 595px !important;
+      height: 842px !important;
+      display: block;
+      z-index: 1;
+    }
+
+    .textLayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      pointer-events: auto;
+      user-select: text;
+      transform-origin: top left;
+    }
+
+    .textLayer > div {
+      font-family: sans-serif;
+      line-height: 1;
+      white-space: pre;
+      color: transparent; /* Only highlight shows */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="flipbook"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf_viewer.min.js"></script>
+
+  <script>
+    const url = "Healing-Her-Heart.pdf";
+
+    const baseWidth = 595;
+    const baseHeight = 842;
+    const scaleFactor = 2;
+
+    pdfjsLib.getDocument(url).promise.then(async function (pdf) {
+      const flipbook = document.querySelector(".flipbook");
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: scaleFactor });
+
+        // Render Canvas
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        canvas.style.width = baseWidth + "px";
+        canvas.style.height = baseHeight + "px";
+
+        const renderCanvas = page.render({
+          canvasContext: context,
+          viewport: viewport
+        });
+
+        // Render Text Layer
+        const textContent = await page.getTextContent();
+        const textLayerDiv = document.createElement("div");
+        textLayerDiv.className = "textLayer";
+        textLayerDiv.style.width = viewport.width + "px";
+        textLayerDiv.style.height = viewport.height + "px";
+        textLayerDiv.style.transform = `scale(${1 / scaleFactor})`;
+        textLayerDiv.style.transformOrigin = "top left";
+
+        const renderText = pdfjsLib.renderTextLayer({
+          textContent,
+          container: textLayerDiv,
+          viewport,
+          textDivs: [],
+          enhanceTextSelection: true
+        });
+
+        // Wait for both canvas and text layer to finish
+        await Promise.all([renderCanvas.promise, renderText]);
+
+        // Wrap in page container
+        const pageDiv = document.createElement("div");
+        pageDiv.classList.add("page");
+        pageDiv.appendChild(canvas);
+        pageDiv.appendChild(textLayerDiv);
+        flipbook.appendChild(pageDiv);
+      }
+
+      // Initialize Turn.js
+      $(".flipbook").turn({
+        width: baseWidth * 2,
+        height: baseHeight,
+        autoCenter: true,
+        elevation: 50
+      });
+    });
+  </script>
+</body>
+</html>

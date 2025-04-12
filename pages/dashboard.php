@@ -80,7 +80,7 @@
 
         .chat-body {
             padding: 16px;
-            height: 300px; /* Fixed height for the chat area */
+            height: 650px; /* Fixed height for the chat area */
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -273,9 +273,9 @@
                                 </li>
                                
                                 <li>
-                                    <a href="teaching-history.php" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
-                                        <i class="fas fa-history"></i>
-                                        <span>Teaching History</span>
+                                    <a href="\learntoearn\pages\pdfreader\index.html" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                        
+                                        <span>📚 Book Reading</span>
                                     </a>
                                 </li>
                                 <li>
@@ -368,22 +368,7 @@
 
                         <!-- Quick Actions -->
                         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-file-alt text-blue-500 text-xl mr-3"></i>
-                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Create New Syllabus</h3>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">Start planning your new course or update existing ones.</p>
-                                <a href="syllabus-create.php" class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Create Now</a>
-                            </div>
-                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                                <div class="flex items-center mb-4">
-                                    <i class="fas fa-lightbulb text-yellow-500 text-xl mr-3"></i>
-                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Generate MCQs</h3>
-                                </div>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4">Create AI-assisted multiple choice questions for your topics.</p>
-                                <a href="mcq-generator.php" class="block w-full px-4 py-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white rounded-md">Generate MCQs</a>
-                            </div>
+                          
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
                                 <div class="flex items-center mb-4">
                                     <i class="fas fa-comments text-green-500 text-xl mr-3"></i>
