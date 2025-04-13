@@ -4,7 +4,7 @@
 
  // Check if the user is logged in, otherwise redirect to login page
  if (!isset($_SESSION['user_id'])) {
-     header("Location: login.php");
+     header("Location: ../index.php");
      exit; // Stop script execution
  }
 
@@ -206,10 +206,10 @@
                 <div class="hidden md:flex items-center space-x-4">
                     <nav>
                         <ul class="flex space-x-6 text-gray-600 dark:text-gray-300">
-                            <li><a href="index.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li>
+                            <!-- <li><a href="index.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li> -->
                             <li><a href="subjects.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Subjects</a></li>
                             <li><a href="messages.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
-                            <li><a href="ai-tools.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a></li>
+                            <li><a href="learntoearnai.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">LearnToEarnAi</a></li>
                         </ul>
                     </nav>
                     <div class="flex items-center space-x-4">
@@ -225,7 +225,7 @@
                             </button>
                             <div id="user-dropdown" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 hidden z-10">
                                 <a href="profile.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
-                                <a href="settings.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a>
+                                <!-- <a href="settings.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a> -->
                                 <a href="/learntoearn/pages/logout.php" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
                             </div>
                         </div>
@@ -238,13 +238,13 @@
             <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-inner">
                 <nav class="container mx-auto px-4 py-3">
                     <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><a href="index.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li>
+                        <!-- <li><a href="index.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li> -->
                         <li><a href="subjects.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Subjects</a></li>
                         <li><a href="messages.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
-                        <li><a href="ai-tools.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">AI Tools</a></li>
+                        <li><a href="learntoearnai.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">LearnToEarn Ai</a></li>
                         <li><a href="profile.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Profile</a></li>
-                        <li><a href="settings.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Settings</a></li>
-                        <li><a href="/learntoearn/pages/login.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Logout</a></li>
+                        <!-- <li><a href="settings.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Settings</a></li> -->
+                        <li><a href="../index.php" class="block py-2 hover:text-indigo-600 dark:hover:text-indigo-400">Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -380,11 +380,7 @@
                         </section>
 
                         <!-- Recent Activity (Placeholder Content) -->
-                        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-                           <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">More Page Content</h2>
-                           <p class="text-gray-600 dark:text-gray-300">This section represents other content you might have on your dashboard page.</p>
-                           <!-- Add more dashboard widgets or content here -->
-                        </section>
+                     
 
                     </div>
                 </div>
