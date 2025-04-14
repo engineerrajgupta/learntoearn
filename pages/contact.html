@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LearnToEarn</title>
+    <!-- Tailwind CSS CDN (for development/demo purposes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Optional: Add custom base styles or component overrides here if needed */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold hover:text-gray-300">LearnToEarn</a>
+            <!-- Optional: Add other nav links here -->
+            <div>
+                <a href="dashboard.php" class="px-4 hover:text-gray-300">Home</a>
+                <!-- <a href="about.html" class="px-4 hover:text-gray-300">About</a> -->
+                <!-- <a href="contact.html" class="px-4 font-semibold text-white border-b-2 border-blue-500">Contact</a> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-700 mb-3">Get in Touch</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                I'm always excited to connect! Whether you have a project idea, a question, or just want to chat, feel free to reach out using the details below.
+            </p>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+
+                <!-- Owner Info & Contact Methods -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQFbWfyQT3EkDg/profile-displayphoto-shrink_800_800/B56ZYlDOrpGoAg-/0/1744378327589?e=1750291200&v=beta&t=W3ROCzzIXvpbZ-YFgq_F5JNeLAHGjyLSpbPPX51CCQc" alt="Photo of [Your Name]" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-5 border-4 border-gray-200 shadow-md">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-1">Raj Gupta</h2>
+                    <p class="text-md text-gray-500 mb-6">Leader of Team LearnToEarn</p>
+
+                    <ul class="space-y-4 text-left w-full max-w-xs mx-auto md:mx-0">
+                        <li class="flex items-center">
+                            <i class="fab fa-linkedin fa-fw text-xl text-blue-600 mr-3"></i>
+                            <a href="https://www.linkedin.com/in/engineerrajgupta/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline transition duration-200">
+                                Connect on LinkedIn
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope fa-fw text-xl text-red-500 mr-3"></i>
+                            <a href="mailto:engineerrajgupta@gmail.com" class="text-blue-600 hover:text-blue-800 hover:underline transition duration-200">
+                                engineerrajgupta@gmail.com
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone fa-fw text-xl text-green-600 mr-3"></i>
+                            <a href="tel:+918340252219" class="text-blue-600 hover:text-blue-800 hover:underline transition duration-200">
+                                +91 8340252219
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Address & Map -->
+                <div class="mt-8 md:mt-0">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4 text-center md:text-left">Visit Us (LPU Campus)</h3>
+                    <address class="not-italic text-gray-600 mb-6 leading-relaxed text-center md:text-left">
+                        Lovely Professional University,<br>
+                        Jalandhar-Delhi G.T. Road,<br>
+                        Phagwara, Punjab 144001,<br>
+                        India
+                    </address>
+
+                    <div class="map-container rounded-lg overflow-hidden shadow-md border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3414.717773090884!2d75.7026788150055!3d31.25591368149412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5f5e9efe2e23%3A0x1ff97493e1284565!2sLovely%20Professional%20University!5e0!3m2!1sen!2sin!4v1678886050123!5m2!1sen!2sin"
+                            width="100%"
+                            height="350"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Optional: Add a Contact Form section here if needed -->
+        <!--
+        <section class="mt-12 bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">Send a Direct Message</h2>
+            <form action="#" method="POST" class="max-w-xl mx-auto">
+                 ... your form fields (Name, Email, Message) ...
+                 <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200">Send Message</button>
+            </form>
+        </section>
+        -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-700 text-gray-300 text-center p-4 mt-12">
+        <p>© 2025 LearnToEarn. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

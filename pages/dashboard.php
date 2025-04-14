@@ -207,9 +207,11 @@
                     <nav>
                         <ul class="flex space-x-6 text-gray-600 dark:text-gray-300">
                             <!-- <li><a href="index.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Dashboard</a></li> -->
-                            <li><a href="subjects.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Subjects</a></li>
-                            <li><a href="messages.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
                             <li><a href="learntoearnai.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">LearnToEarnAi</a></li>
+
+                            <li><a href="messages.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
+                            <li><a href="contact.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
+
                         </ul>
                     </nav>
                     <div class="flex items-center space-x-4">
@@ -260,17 +262,17 @@
                         <nav>
                             <ul class="space-y-2">
                                 <li>
-                                    <a href="syllabus.php" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                    <!-- <a href="syllabus.php" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
                                         <i class="fas fa-book"></i>
                                         <span>Syllabus Management</span>
-                                    </a>
+                                    </a> -->
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="progress.php" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
                                         <i class="fas fa-chart-line"></i>
                                         <span>Progress Tracking</span>
                                     </a>
-                                </li>
+                                </li> -->
                                
                                 <li>
                                     <a href="\learntoearn\pages\pdfreader\index.html" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
@@ -290,12 +292,12 @@
                                         <span>Question Bank</span>
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="ai-experts.php" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300">
                                         <i class="fas fa-robot"></i>
                                         <span>AI Subject Experts</span>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </aside>
@@ -345,23 +347,23 @@
                                     <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">Recently Completed Topics</h3>
                                     <ul class="space-y-2">
                                         <li class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                                            <span class="text-gray-700 dark:text-gray-300">Introduction to Calculus</span>
+                                            <span class="text-gray-700 dark:text-gray-300">Sanitization in php</span>
                                             <span class="text-xs text-gray-500 dark:text-gray-400">March 15, 2025</span>
                                         </li>
                                         <li class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                                            <span class="text-gray-700 dark:text-gray-300">Cell Biology Fundamentals</span>
-                                            <span class="text-xs text-gray-500 dark:text-gray-400">March 12, 2025</span>
+                                            <span class="text-gray-700 dark:text-gray-300">Inheritance in Java</span>
+                                            <span class="text-xs text-gray-500 dark:text-gray-400">March 03, 2025</span>
                                         </li>
                                         <li class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                                            <span class="text-gray-700 dark:text-gray-300">Shakespeare's Sonnets</span>
+                                            <span class="text-gray-700 dark:text-gray-300"> Coding decoding --PEA305</span>
                                             <span class="text-xs text-gray-500 dark:text-gray-400">March 10, 2025</span>
                                         </li>
                                         <li class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-2">
-                                            <span class="text-gray-700 dark:text-gray-300">Newton's Laws of Motion</span>
+                                            <span class="text-gray-700 dark:text-gray-300">History Of Ai</span>
                                             <span class="text-xs text-gray-500 dark:text-gray-400">March 8, 2025</span>
                                         </li>
                                     </ul>
-                                    <a href="progress.php" class="block mt-4 text-indigo-600 dark:text-indigo-400 hover:underline">View full progress report →</a>
+                                    <!-- <a href="progress.php" class="block mt-4 text-indigo-600 dark:text-indigo-400 hover:underline">View full progress report →</a> -->
                                 </div>
                             </div>
                         </section>
@@ -377,9 +379,27 @@
                                 <p class="text-gray-600 dark:text-gray-300 mb-4">Communicate with your students through the messaging system.</p>
                                 <a href="messages.php" class="block w-full px-4 py-2 text-center bg-green-500 hover:bg-green-600 text-white rounded-md">Open Messages</a>
                             </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-file-alt text-blue-500 text-xl mr-3"></i>
+                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">book Reading</h3>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">Get the feeling of real book reading On LearnToEarn.</p>
+                                <a href="pdfreader/index.html" class="block w-full px-4 py-2 text-center bg-blue-500 hover:bg-blue-600 text-white rounded-md">Read Now</a>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                                <div class="flex items-center mb-4">
+                                    <i class="fas fa-lightbulb text-yellow-500 text-xl mr-3"></i>
+                                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Generate MCQs</h3>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-300 mb-4">Create AI-assisted multiple choice questions for your topics.</p>
+                                <a href="mcq-generator.php" class="block w-full px-4 py-2 text-center bg-yellow-500 hover:bg-yellow-600 text-white rounded-md">Generate MCQs</a>
+                            </div>
                         </section>
 
                         <!-- Recent Activity (Placeholder Content) -->
+
+                        
                      
 
                     </div>
@@ -398,7 +418,7 @@
                         <a href="about.php" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">About</a>
                         <a href="privacy.php" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Privacy Policy</a>
                         <a href="terms.php" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Terms of Service</a>
-                        <a href="contact.php" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
+                        <a href="contact.html" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a>
                     </div>
                 </div>
             </div>
@@ -508,7 +528,7 @@
              const labelColor = isDark ? '#d1d5db' : '#374151'; // Tailwind gray-300 / gray-700
 
              const chartData = {
-                labels: ['Mathematics', 'Physics', 'Chemistry', 'Biology', 'Literature'],
+                labels: ['CSE310', 'INT220', 'INT219', 'PEA-305', 'CSE408'],
                 datasets: [{
                     label: 'Completion Rate (%)',
                     data: [85, 72, 78, 65, 90],
