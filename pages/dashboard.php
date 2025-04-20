@@ -211,6 +211,7 @@
 
                             <li><a href="messages.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">Messages</a></li>
                             <li><a href="contact.html" class="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</a></li>
+                            <li><a href="feedback.php" class="hover:text-indigo-600 dark:hover:text-indigo-400">feedback</a></li>
 
                         </ul>
                     </nav>
@@ -310,7 +311,7 @@
                                 <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Welcome, <?php echo $username; ?> !</h2>
                                 <!-- <span class="text-sm text-gray-500 dark:text-gray-400">Last login: March 18, 2025 - 9:42 AM</span> -->
                             </div>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">Ready to make learning more effective today? Here's what's happening in your teaching world.</p>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">Ready to make learning more effective today? Here's what's happening.....</p>
                             <div class="flex flex-wrap gap-4">
                                 <div class="flex items-center bg-indigo-100 dark:bg-indigo-900 p-3 rounded-lg">
                                     <i class="fas fa-check-circle text-indigo-600 dark:text-indigo-400 text-xl mr-3"></i>

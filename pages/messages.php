@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
     $user_id = $_SESSION['user_id'];
 
     // Prepare and execute the INSERT statement for the message
-    // This part doesn't need changes as it uses standard messages columns
     try {
         $stmt = $pdo->prepare("INSERT INTO messages (user_id, message) VALUES (:user_id, :message)");
         $stmt->execute(['user_id' => $user_id, 'message' => $message]);
@@ -35,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['message'])) {
 
 // --- Fetch Messages for Display (GET Request or after failed POST) ---
 $messages = []; // Initialize empty array
+$display_error = null; // Variable to hold potential display errors
 try {
     // Updated SQL: Select user's name AND role from your specific users table
     $sql = "SELECT msg.id, msg.user_id, msg.message, msg.created_at,
@@ -42,16 +42,15 @@ try {
             FROM messages msg             -- Alias messages table as 'msg'
             JOIN users usr ON msg.user_id = usr.id -- Alias users table as 'usr'
             ORDER BY msg.created_at ASC"; // Order by oldest first for chat flow
-            // Using DESC in original code, changed to ASC for typical chat order
 
     $stmt = $pdo->query($sql);
     // Fetch all messages into the array
     $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
-    // Log the error and maybe show a user-friendly message
+    // Log the error and set a user-friendly message
     error_log("Error fetching messages: " . $e->getMessage());
-    // You could set a display error variable here: $display_error = "Could not load messages.";
+    $display_error = "Could not load messages at this time. Please try again later.";
 }
 
 // Close the connection explicitly (optional but good practice)
@@ -196,7 +195,7 @@ $pdo = null;
         form {
             display: flex; /* Align items horizontally */
             gap: 10px; /* Space between textarea and button */
-            margin-top: 10px;
+            margin-top: 10px; /* Adjusted margin */
         }
         textarea {
             flex-grow: 1; /* Take available space */
@@ -280,7 +279,7 @@ $pdo = null;
         .back-link {
             display: block;
             text-align: center;
-            margin-top: 25px;
+            margin-top: 25px; /* Increased margin for separation */
             color: #1d4ed8; /* darker blue */
             text-decoration: none;
             font-size: 0.9em;
@@ -312,12 +311,13 @@ $pdo = null;
     <h2>📘 Study Discussion</h2>
 
     <div class="chat-box" id="chatBox">
-        <?php if (empty($messages)): ?>
+        <?php if (isset($display_error)): // Display error first if it exists ?>
+             <p style="text-align: center; color: #ef4444; padding: 10px; background-color: #fee2e2; border: 1px solid #fecaca; border-radius: 4px; margin-bottom: 15px;"><?php echo htmlspecialchars($display_error); ?></p>
+        <?php endif; ?>
+
+        <?php if (empty($messages) && !$display_error): // Show 'no messages' only if there's no error ?>
             <p style="text-align: center; color: #6b7280;">No messages yet. Start the discussion!</p>
-            <?php if(isset($display_error)): ?>
-                 <p style="text-align: center; color: #ef4444;"><?php echo htmlspecialchars($display_error); ?></p>
-            <?php endif; ?>
-        <?php else: ?>
+        <?php elseif (!empty($messages)): ?>
             <?php foreach ($messages as $row):
                 // Determine role class for styling
                 $role_class = strtolower(htmlspecialchars($row['role']));
@@ -343,8 +343,10 @@ $pdo = null;
         <input type="submit" value="Send">
     </form>
 
-    <!-- Optional: Link back to a dashboard -->
-    <!-- <a class="back-link" href="dashboard.php">← Back to Dashboard</a> -->
+    <!-- === ADDED/UNCOMMENTED THIS LINK === -->
+    <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
+    <!-- ==================================== -->
+
 </div>
 
 <script>
@@ -377,13 +379,13 @@ $pdo = null;
     // Scroll chat box to the bottom
     function scrollToBottom() {
         const chatBox = document.getElementById('chatBox');
-        const endOfChat = document.getElementById('end-of-chat');
-        if (chatBox && endOfChat) {
-            // Option 1: Scroll container height
+        if (chatBox) { // Check if chatBox exists before scrolling
              chatBox.scrollTop = chatBox.scrollHeight;
-            // Option 2: Scroll anchor into view
-            // endOfChat.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Can be jumpy
         }
+        // const endOfChat = document.getElementById('end-of-chat'); // Removed anchor method
+        // if (chatBox && endOfChat) {
+        //     endOfChat.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Can be jumpy
+        // }
     }
 
     // Scroll on page load

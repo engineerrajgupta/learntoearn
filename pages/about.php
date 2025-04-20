@@ -35,7 +35,7 @@
       <div>
         <h2 class="text-2xl font-semibold text-gray-700 mb-2">👨‍💻 Who Built This?</h2>
         <p class="mb-4">
-          LearnToEarn is passionately developed by <strong>Raj Gupta</strong>, a student and developer driven by the idea that <span class="text-orange-600 font-semibold">"real learning pays off."</span> The platform is built using PHP, MySQL, Tailwind CSS, JavaScript, and integrated with AI using Gemini API.
+          LearnToEarn is passionately developed by <strong>Raj Gupta</strong> and LearnToEarn Team member,students and developers driven by the idea that <span class="text-orange-600 font-semibold">"real learning pays off."</span> The platform is built using PHP, MySQL, Tailwind CSS, JavaScript, and integrated with AI using Gemini API.
         </p>
 
         <h2 class="text-2xl font-semibold text-gray-700 mb-2">💡 Our Mission</h2>
