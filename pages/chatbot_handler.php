@@ -9,7 +9,7 @@
 $geminiApiKey = getenv('GEMINI_API_KEY'); // Try to get from environment first
 if (empty($geminiApiKey)) {
     // Fallback for local testing ONLY - REPLACE WITH YOUR ACTUAL KEY
-    $geminiApiKey = 'AIzaSyCG6coSGkxY0Ming4eEZXFa57Eft8uX0W0'; // <--- PUT YOUR REAL TEST KEY HERE
+    $geminiApiKey = 'apiiii keyyyyy'; // <--- PUT YOUR REAL TEST KEY HERE
     // You might want to log a warning if the fallback is used
     // error_log("Warning: Using hardcoded fallback Gemini API Key for testing.");
 }
